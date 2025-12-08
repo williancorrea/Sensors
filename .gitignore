@@ -1,0 +1,23 @@
+HELP.md
+
+device-management/.gradle
+device-management/build/
+
+temperature-monitoring/.gradle
+temperature-monitoring/build/
+
+temperature-processing/.gradle
+temperature-processing/build/
+
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
