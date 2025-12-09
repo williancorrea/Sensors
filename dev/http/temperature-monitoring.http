@@ -1,0 +1,8 @@
+### Find sensor monitoring config
+GET http://localhost:8082/api/sensors/0NT9GA6VREJE1/monitoring
+
+### Enable sensor monitoring config
+PUT http://localhost:8082/api/sensors/0NT9GA6VREJE1/monitoring/enable
+
+### Disable sensor monitoring config
+DELETE http://localhost:8082/api/sensors/0NT9GA6VREJE1/monitoring/enable
