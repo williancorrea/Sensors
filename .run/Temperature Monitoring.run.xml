@@ -1,5 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Temperature Monitoring" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/temurin-21.0.9" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <module name="temperature-monitoring.main" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="dev.williancorrea.sensors.temperature.monitoring.TemperatureMonitoringApplication" />
     <option name="VM_PARAMETERS" value="-XX:MaxRAM=256m" />
