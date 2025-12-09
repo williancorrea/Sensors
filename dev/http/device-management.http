@@ -11,7 +11,22 @@ Content-Type: application/json
 }
 
 ### Find sensor by TSID
-GET http://localhost:8080/api/sensors/0NT9AV69REJ1P
+GET http://localhost:8080/api/sensors/0NT9GY4JWEJ5T
 
 ### Find all
 GET http://localhost:8080/api/sensors?page=0&size=5&sort=id,desc
+
+### Update sensor by TSID
+PUT http://localhost:8080/api/sensors/0NT9GA6VREJE1
+Content-Type: application/json
+
+{
+	"name": "Sensor UPDATED {{$random.integer}}",
+	"ip": "{{$random.internet.ipV4Address}}",
+	"location": "{{$random.address.cityName}}",
+	"protocol": "HTTP",
+	"model": "S{{$random.integer}}-HTTP"
+}
+
+### Delete sensor by TSID
+DELETE http://localhost:8080/api/sensors/0NT9GA6VREJE1
