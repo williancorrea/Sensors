@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Temperature Processing" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="temperature-processing.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="dev.williancorrea.sensors.temperature.processing.TemperatureProcessingApplication" />
+    <option name="VM_PARAMETERS" value="-XX:MaxRAM=256m" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
