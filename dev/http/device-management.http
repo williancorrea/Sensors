@@ -12,3 +12,6 @@ Content-Type: application/json
 
 ### Find sensor by TSID
 GET http://localhost:8080/api/sensors/0NT9AV69REJ1P
+
+### Find all
+GET http://localhost:8080/api/sensors?page=0&size=5&sort=id,desc
