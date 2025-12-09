@@ -1,4 +1,4 @@
-package dev.williancorrea.sensors.device.management;
+package dev.williancorrea.sensors.device.management.common;
 
 import java.util.Optional;
 import io.hypersistence.tsid.TSID;
