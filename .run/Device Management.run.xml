@@ -1,5 +1,9 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Device Management" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="tsid.node" value="7" />
+      <env name="tsid.node.count" value="64" />
+    </envs>
     <module name="device-management.main" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="dev.williancorrea.sensors.device.management.DeviceManagementApplication" />
     <option name="VM_PARAMETERS" value="-XX:MaxRAM=256m" />
