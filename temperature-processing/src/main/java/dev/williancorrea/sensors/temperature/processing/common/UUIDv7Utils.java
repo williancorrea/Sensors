@@ -1,4 +1,4 @@
-package dev.williancorrea.sensors.temperature.processing;
+package dev.williancorrea.sensors.temperature.processing.common;
 
 import java.time.Instant;
 import java.time.OffsetDateTime;

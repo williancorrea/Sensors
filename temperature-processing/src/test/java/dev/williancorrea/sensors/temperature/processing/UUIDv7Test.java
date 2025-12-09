@@ -3,6 +3,8 @@ package dev.williancorrea.sensors.temperature.processing;
 import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.UUID;
+import dev.williancorrea.sensors.temperature.processing.common.IdGenerator;
+import dev.williancorrea.sensors.temperature.processing.common.UUIDv7Utils;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

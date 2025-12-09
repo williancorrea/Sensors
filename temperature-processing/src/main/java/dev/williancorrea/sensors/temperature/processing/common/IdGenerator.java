@@ -1,4 +1,4 @@
-package dev.williancorrea.sensors.temperature.processing;
+package dev.williancorrea.sensors.temperature.processing.common;
 
 import com.fasterxml.uuid.Generators;
 import com.fasterxml.uuid.impl.TimeBasedEpochRandomGenerator;

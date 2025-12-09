@@ -1,0 +1,6 @@
+### Receive Sensor data
+POST http://localhost:8081/api/sensors/0NT9QHK24EJ41/temperatures/data
+Content-Type: text/plain
+
+24.95
+
