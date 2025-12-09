@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### Find sensor by TSID
-GET http://localhost:8080/api/sensors/0NT9GY4JWEJ5T
+GET http://localhost:8080/api/sensors/0NT9QHK24EJ41
 
 ### Find all
 GET http://localhost:8080/api/sensors?page=0&size=5&sort=id,desc
@@ -30,3 +30,9 @@ Content-Type: application/json
 
 ### Delete sensor by TSID
 DELETE http://localhost:8080/api/sensors/0NT9GA6VREJE1
+
+### ENABLE sensor by TSID
+PUT http://localhost:8080/api/sensors/0NT9QHK24EJ41/enable
+
+### DISABLE sensor by TSID
+DELETE http://localhost:8080/api/sensors/0NT9QHK24EJ41/enable
