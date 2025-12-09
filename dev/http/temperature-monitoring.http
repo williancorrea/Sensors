@@ -1,8 +1,12 @@
 ### Find sensor monitoring config
-GET http://localhost:8082/api/sensors/0NT9GA6VREJE1/monitoring
+GET http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/monitoring
 
 ### Enable sensor monitoring config
-PUT http://localhost:8082/api/sensors/0NT9GA6VREJE1/monitoring/enable
+PUT http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/monitoring/enable
 
 ### Disable sensor monitoring config
-DELETE http://localhost:8082/api/sensors/0NT9GA6VREJE1/monitoring/enable
+DELETE http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/monitoring/enable
+
+
+### Find sensors temperatures
+GET http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/temperatures?page=0&size=5&sort=id,desc
