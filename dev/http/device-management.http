@@ -1,0 +1,10 @@
+POST http://localhost:8080/api/sensors
+Content-Type: application/json
+
+{
+	"name": "Sensor {{$random.integer}}",
+	"ip": "{{$random.internet.ipV4Address}}",
+	"location": "{{$random.address.cityName}}",
+	"protocol": "HTTP",
+	"model": "S{{$random.integer}}-HTTP"
+}
