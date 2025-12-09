@@ -8,5 +8,25 @@ PUT http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/monitoring/enable
 DELETE http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/monitoring/enable
 
 
+
 ### Find sensors temperatures
 GET http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/temperatures?page=0&size=5&sort=id,desc
+
+
+
+
+### Create or update sensor alert
+PUT http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/alert
+Content-Type: application/json
+
+{
+    "minTemperature": 11.2,
+    "maxTemperature": 37.8
+    
+}
+
+### Find sensor alert
+GET http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/alert
+
+### Delete sensor alert
+DELETE http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/alert
