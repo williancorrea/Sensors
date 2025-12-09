@@ -1,3 +1,4 @@
+### Create sensor
 POST http://localhost:8080/api/sensors
 Content-Type: application/json
 
@@ -8,3 +9,6 @@ Content-Type: application/json
 	"protocol": "HTTP",
 	"model": "S{{$random.integer}}-HTTP"
 }
+
+### Find sensor by TSID
+GET http://localhost:8080/api/sensors/0NT9AV69REJ1P
