@@ -49,7 +49,6 @@ public class SensorMonitoringController {
   public void disable(@PathVariable TSID sensorId) {
     var sensorMonitoring = findOrDefault(sensorId);
     if (Boolean.FALSE.equals(sensorMonitoring.getEnabled())) {
-      Thread.sleep(Duration.ofSeconds(10));
       throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Sensor already disabled");
     }
 
