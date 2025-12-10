@@ -1,5 +1,5 @@
 ### Find sensor monitoring config
-GET http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/monitoring
+GET http://localhost:8082/api/sensors/0NTMG76R4EK6G/monitoring
 
 ### Enable sensor monitoring config
 PUT http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/monitoring/enable

@@ -9,15 +9,19 @@ Content-Type: application/json
 	"protocol": "HTTP",
 	"model": "S{{$random.integer}}-HTTP"
 }
+> {% client.global.set("sensor_id", response.body.id); %}
 
 ### Find sensor by TSID
-GET http://localhost:8080/api/sensors/0NT9QHK24EJ41
+GET http://localhost:8080/api/sensors/{{sensor_id}}
+
+### Find sensor by TSID with detail
+GET http://localhost:8080/api/sensors/{{sensor_id}}/detail
 
 ### Find all
 GET http://localhost:8080/api/sensors?page=0&size=5&sort=id,desc
 
 ### Update sensor by TSID
-PUT http://localhost:8080/api/sensors/0NT9GA6VREJE1
+PUT http://localhost:8080/api/sensors/{{sensor_id}}
 Content-Type: application/json
 
 {
@@ -29,10 +33,10 @@ Content-Type: application/json
 }
 
 ### Delete sensor by TSID
-DELETE http://localhost:8080/api/sensors/0NT9GA6VREJE1
+DELETE http://localhost:8080/api/sensors/{{sensor_id}}
 
 ### ENABLE sensor by TSID
-PUT http://localhost:8080/api/sensors/0NT9QHK24EJ41/enable
+PUT http://localhost:8080/api/sensors/{{sensor_id}}/enable
 
 ### DISABLE sensor by TSID
-DELETE http://localhost:8080/api/sensors/0NT9QHK24EJ41/enable
+DELETE http://localhost:8080/api/sensors/{{sensor_id}}/enable

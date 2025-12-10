@@ -1,5 +1,7 @@
 package dev.williancorrea.sensors.device.management.api.controller;
 
+import dev.williancorrea.sensors.device.management.api.config.http.client.SensorMonitoringClient;
+import dev.williancorrea.sensors.device.management.api.model.SensorDetailOutput;
 import dev.williancorrea.sensors.device.management.api.model.SensorInput;
 import dev.williancorrea.sensors.device.management.api.model.SensorOutput;
 import dev.williancorrea.sensors.device.management.common.IdGenerator;
@@ -30,6 +32,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class SensorController {
 
   private final SensorRepository sensorRepository;
+  private final SensorMonitoringClient sensorMonitoringClient;
 
   @GetMapping
   public Page<SensorOutput> findAll(@PageableDefault Pageable pageable) {
@@ -41,6 +44,16 @@ public class SensorController {
   public SensorOutput getOne(@PathVariable("sensorId") TSID sensorId) {
     Sensor sensor = findById(sensorId);
     return new SensorOutput(sensor);
+  }
+
+  @GetMapping("/{sensorId}/detail")
+  public SensorDetailOutput getDetail(@PathVariable("sensorId") TSID sensorId) {
+    var sensor = findById(sensorId);
+    var detail = sensorMonitoringClient.getDetail(sensorId);
+    return SensorDetailOutput.builder()
+        .sensor(new SensorOutput(sensor))
+        .monitoring(detail)
+        .build();
   }
 
   @PostMapping
@@ -79,6 +92,7 @@ public class SensorController {
     Sensor sensor = findById(sensorId);
     sensor.setEnabled(true);
     sensorRepository.saveAndFlush(sensor);
+    sensorMonitoringClient.enableMonitoring(sensorId);
   }
 
   @DeleteMapping("/{sensorId}/enable")
@@ -87,13 +101,15 @@ public class SensorController {
     Sensor sensor = findById(sensorId);
     sensor.setEnabled(false);
     sensorRepository.saveAndFlush(sensor);
+    sensorMonitoringClient.disableMonitoring(sensorId);
   }
 
   @DeleteMapping("/{sensorId}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
-  public void update(@PathVariable("sensorId") TSID sensorId) {
+  public void delete(@PathVariable("sensorId") TSID sensorId) {
     Sensor sensor = findById(sensorId);
     sensorRepository.delete(sensor);
+    sensorMonitoringClient.disableMonitoring(sensorId);
   }
 
 
