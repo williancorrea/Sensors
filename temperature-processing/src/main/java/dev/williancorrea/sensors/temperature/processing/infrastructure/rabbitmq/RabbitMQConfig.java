@@ -1,14 +1,24 @@
 package dev.williancorrea.sensors.temperature.processing.infrastructure.rabbitmq;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.ExchangeBuilder;
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitMQConfig {
+
+  public static final String FANOUT_EXCHANGE_NAME =
+      "temperature-processing.temperature-received.v1.e";
+
+  @Bean
+  public Jackson2JsonMessageConverter messageConverter(ObjectMapper objectMapper) {
+    return new Jackson2JsonMessageConverter(objectMapper);
+  }
 
   @Bean
   public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory) {
@@ -18,7 +28,7 @@ public class RabbitMQConfig {
   @Bean
   public FanoutExchange exchange() {
     return ExchangeBuilder
-        .fanoutExchange("temperature-processing.temperature-received.v1.e")
+        .fanoutExchange(FANOUT_EXCHANGE_NAME)
         .build();
   }
 }

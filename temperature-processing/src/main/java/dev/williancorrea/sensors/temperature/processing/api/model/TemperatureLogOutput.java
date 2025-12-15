@@ -11,7 +11,7 @@ import lombok.Data;
 public class TemperatureLogOutput {
   
   private UUID id;
-  private TSID sensorID;
+  private TSID sensorId;
   private OffsetDateTime registeredAt;
   private Double value;
 }

@@ -18,7 +18,7 @@ GET http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/temperatures?page=0&size=5&s
 # ----------------------------------------------------------------------------
 
 ### Create or update sensor alert
-PUT http://localhost:8082/api/sensors/0K6ZYEYMTZ8QT/alert
+PUT http://localhost:8082/api/sensors/0NWAPEFV8EJKS/alert
 Content-Type: application/json
 
 {

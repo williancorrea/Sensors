@@ -16,12 +16,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SensorMonitoring {
-  
+
   @Id
   @AttributeOverride(name = "value", column = @Column(name = "id", columnDefinition = "BIGINT"))
   private SensorId id;
-  
+
   private Double lastTemperature;
   private OffsetDateTime updatedAt;
   private Boolean enabled;
+
+  public boolean isEnabled() {
+    return Boolean.TRUE.equals(enabled);
+  }
 }

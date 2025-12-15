@@ -13,16 +13,16 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TemperatureLogOutput {
+public class TemperatureLogData {
 
   private UUID id;
-  private TSID sensorID;
+  private TSID sensorId;
   private OffsetDateTime registeredAt;
   private Double value;
 
-  public TemperatureLogOutput(TemperatureLog temperatureLog) {
+  public TemperatureLogData(TemperatureLog temperatureLog) {
     this.id = temperatureLog.getId().getValue();
-    this.sensorID = temperatureLog.getSensorId().getValue();
+    this.sensorId = temperatureLog.getSensorId().getValue();
     this.registeredAt = temperatureLog.getRegisteredAt();
     this.value = temperatureLog.getValue();
   }

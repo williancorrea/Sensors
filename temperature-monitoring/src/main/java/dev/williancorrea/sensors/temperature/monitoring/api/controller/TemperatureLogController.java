@@ -1,8 +1,7 @@
 package dev.williancorrea.sensors.temperature.monitoring.api.controller;
 
-import dev.williancorrea.sensors.temperature.monitoring.api.model.TemperatureLogOutput;
+import dev.williancorrea.sensors.temperature.monitoring.api.model.TemperatureLogData;
 import dev.williancorrea.sensors.temperature.monitoring.domain.model.SensorId;
-import dev.williancorrea.sensors.temperature.monitoring.domain.model.SensorMonitoring;
 import dev.williancorrea.sensors.temperature.monitoring.domain.repository.TemperatureLogRepository;
 import io.hypersistence.tsid.TSID;
 import lombok.RequiredArgsConstructor;
@@ -22,9 +21,9 @@ public class TemperatureLogController {
   private final TemperatureLogRepository temperatureLogRepository;
   
   @GetMapping
-  public Page<TemperatureLogOutput> search(@PathVariable("sensorId") TSID sensorId,
-                                           @PageableDefault Pageable pageable) {
+  public Page<TemperatureLogData> search(@PathVariable("sensorId") TSID sensorId,
+                                         @PageableDefault Pageable pageable) {
     return temperatureLogRepository.findAllBySensorId(new SensorId(sensorId), pageable)
-        .map(TemperatureLogOutput::new);
+        .map(TemperatureLogData::new);
   }
 }
