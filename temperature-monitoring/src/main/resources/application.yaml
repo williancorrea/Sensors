@@ -28,3 +28,10 @@ spring:
     listener:
       simple:
         prefetch: 5 #Define a quantidade de mensagens que irá receber por vez
+        retry:
+          enabled: true
+          initial-interval: 10s #Tempo incremental até combar (intervalo maximo ou a quantidade de tentativas) (10 20 30 ....)
+          max-interval: 30s
+          multiplier: 2
+          max-attempts: 3
+          
